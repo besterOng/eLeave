@@ -23,9 +23,20 @@ namespace eLeave
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new StyleBundle("~/Content/fontawesome").Include(
+                      "~/Content/css/all.min.css"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/adminlte.min.css",
+                      "~/Content/css/dataTables.bootstrap4.css"));
+
+            bundles.Add(new StyleBundle("~/Scripts/js").Include(
+                      "~/Scripts/Layout/adminlte.js",
+                      "~/Scripts/Layout/bootstrap.bundle.min.js",
+                      "~/Scripts/Layout/dataTables.bootstrap4.js",
+                      "~/Scripts/Layout/demo.js",
+                      "~/Scripts/Layout/jquery.dataTables.js",
+                      "~/Scripts/Layout/jquery.min.js"));
         }
     }
 }
