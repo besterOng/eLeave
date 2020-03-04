@@ -28,7 +28,8 @@ namespace eLeave
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/adminlte.min.css",
-                      "~/Content/css/dataTables.bootstrap4.css"));
+                      "~/Content/css/dataTables.bootstrap4.css"
+                      ));
 
             bundles.Add(new StyleBundle("~/Scripts/js").Include(
                       "~/Scripts/Layout/adminlte.js",

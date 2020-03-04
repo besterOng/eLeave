@@ -198,7 +198,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,6 +219,7 @@
     <Content Include="Content\css\adminlte.min.css" />
     <Content Include="Content\css\all.min.css" />
     <Content Include="Content\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\css\Regsiter.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Resources\word_e.png" />
@@ -285,6 +288,8 @@
     <Content Include="Scripts\Layout\jquery.min.map" />
     <Content Include="Scripts\Layout\adminlte.js.map" />
     <Content Include="Views\Board\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

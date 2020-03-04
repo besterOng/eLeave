@@ -24,6 +24,18 @@ namespace eLeave
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Board", action = "Index", id = UrlParameter.Optional }
                 );
+
+            routes.MapRoute(
+                name: "Login",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
+                );
+
+            routes.MapRoute(
+                name: "Register",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Register", action = "Register", id = UrlParameter.Optional }
+                );
         }
     }
 }
