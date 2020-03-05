@@ -3,24 +3,112 @@
     ViewBag.Title = "Test";
 }
 
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<link href="~/Content/css/test.css" rel="stylesheet" />
+@*<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
 
 
-<label for="from">From</label> <input type="text" id="from" name="from" autocomplete="off" /> <label for="to">to</label> <input type="text" id="to" name="to" autocomplete="off" />
+<label for="from">From</label> 
+<input type="text" id="from" name="from" autocomplete="off" />
+<label for="to">To</label> 
+<input type="text" id="to" name="to" autocomplete="off" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
 <script>
+    //$(document).ready(function () {
+    //    var minDate = new Date();
+    //    $("#from").datepicker({
+    //        showAnim: 'drop',
+    //        minDate: minDate,
+    //        numberOfMonth: 1,
+    //        dateFormat: 'dd/mm/yy',
+    //        onClose: function (selectedDate) {
+    //            $('#to').datepicker("option", "minDate", selectedDate)
+    //        }
+    //    })
+
+    //    $("#to").datepicker({
+    //        showAnim: 'drop',
+    //        minDate: minDate,
+    //        numberOfMonth: 1,
+    //        dateFormat: 'dd/mm/yy',
+    //        onClose: function (selectedDate) {
+    //            $('#from').datepicker("option", "minDate", selectedDate)
+    //        }
+    //    })
+    //});
+
+    var $j = jQuery.noConflict();
     var dateToday = new Date();
-    var dates = $("#from, #to").datepicker({
-        defaultDate: "+1w",
+    var dates = $j("#from, #to").datepicker({
+        defaultDate: "dateToday",
         changeMonth: true,
         numberOfMonths: 1,
         minDate: dateToday,
         onSelect: function (selectedDate) {
             var option = this.id == "from" ? "minDate" : "maxDate",
-                instance = $(this).data("datepicker"),
-                date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+                instance = $j(this).data("datepicker"),
+                date = $j.datepicker.parseDate(instance.settings.dateFormat || $j.datepicker._defaults.dateFormat, selectedDate, instance.settings);
             dates.not(this).datepicker("option", option, date);
         }
     });
+
+
+    var count = 0;
+    if (count == 0) {
+        $j("#to").click(function () {
+            $j(".disable-input").attr('disabled', 'disabled');
+            count = 1;
+        });
+    }
+    if (count == 1) {
+        $j("#to").click(function () {
+            $j(".disable-input").removeAttr('disabled');
+            count = 0;
+        });
+    }
+
+    //var $j = jQuery.noConflict();
+    
+    //$j(function () {
+    //    var todayDate = new Date();
+    //    var dateFormat = "dd/mm/yy",
+	//		from = $j("#from")
+	//			.datepicker({
+	//			    defaultDate: todayDate,
+	//			    dateFormat: dateFormat,
+	//			    minDate: todayDate,
+	//			    changeMonth: true,
+	//			    numberOfMonths: 1
+	//			})
+	//			.on("change", function () {
+	//			    to.datepicker("option", "minDate", getDate(this));
+	//			}),
+	//		to = $j("#to").datepicker({
+	//		    defaultDate: "+1d",
+	//		    dateFormat: dateFormat,
+	//		    changeMonth: true,
+	//		    numberOfMonths: 1
+	//		})
+	//		.on("change", function () {
+	//		    from.datepicker("option", "maxDate", getDate(this));
+	//		});
+
+    //    function getDate(element) {
+    //        var date;
+    //        try {
+    //            date = $.datepicker.parseDate(dateFormat, element.value);
+    //        } catch (error) {
+    //            date = null;
+    //        }
+
+    //        return date;
+    //    }
+    //});
+
 </script>
+
+
