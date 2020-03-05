@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/css/test.css" rel="stylesheet" />
+
+
+<label for="from">From</label> <input type="text" id="from" name="from" autocomplete="off" /> <label for="to">to</label> <input type="text" id="to" name="to" autocomplete="off" />
+<script>
+    var dateToday = new Date();
+    var dates = $("#from, #to").datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        minDate: dateToday,
+        onSelect: function (selectedDate) {
+            var option = this.id == "from" ? "minDate" : "maxDate",
+                instance = $(this).data("datepicker"),
+                date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+            dates.not(this).datepicker("option", option, date);
+        }
+    });
+</script>

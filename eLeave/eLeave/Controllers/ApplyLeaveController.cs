@@ -6,14 +6,9 @@ using System.Web.Mvc;
 
 namespace eLeave.Controllers
 {
-    public class BoardController : Controller
+    public class ApplyLeaveController : Controller
     {
-        // GET: Board
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        // GET: ApplyLeave
         public ActionResult ApplyLeave()
         {
             return View();

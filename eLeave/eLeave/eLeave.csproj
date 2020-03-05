@@ -196,11 +196,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplyLeaveController.cs" />
     <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,8 +220,10 @@
   <ItemGroup>
     <Content Include="Content\css\adminlte.min.css" />
     <Content Include="Content\css\all.min.css" />
+    <Content Include="Content\css\ApplyLeave.css" />
     <Content Include="Content\css\dataTables.bootstrap4.css" />
     <Content Include="Content\css\Regsiter.css" />
+    <Content Include="Content\css\test.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Resources\word_e.png" />
@@ -290,10 +294,13 @@
     <Content Include="Views\Board\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Board\ApplyLeave.cshtml" />
+    <Content Include="Views\Test\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\webfonts\" />
+    <Folder Include="Views\ApplyLeave\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
